@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Contact.css';
 
-function Contact(props) {
+const Status = ({ online }) => {
+
+    const [isOnline, setIsOnline] = useState(online)
+
+    return (
+        <p class="status" onClick={() => { setIsOnline(!isOnline) }}>
+            <span className={isOnline ? "status-online" : "status-offline"}></span>
+            <span className="status-text">{isOnline ? "Online" : "Offline"}</span>
+        </p>
+    )
+}
+
+function Contact({ name, avatar, online }) {
     return (
         <div className="Contact">
-            <img className="avatar" alt={props.name} src={props.avatar}></img>
+            <img className="avatar" alt={name} src={avatar}></img>
             <div>
-                <h4 className="name">{props.name}</h4>
-                <p class="status">
-                    <span className={props.online ? "status-online" : "status-offline"}></span>
-                    <span className="status-text">{props.online ? "Online" : "Offline"}</span>
-                </p>
+                <h4 className="name">{name}</h4>
+                <Status online={online} />
             </div>
         </div>
     );

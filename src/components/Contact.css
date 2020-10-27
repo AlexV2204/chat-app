@@ -26,6 +26,7 @@
     color: #999;
     margin: 0;
     display: inline-block;
+    cursor: pointer;
   }
   
   /* Status (rounded&colored indicator) */
@@ -36,6 +37,7 @@
     width: 8px;
     height: 8px;
     margin-right: 6px;
+    cursor: pointer;
   }
   
   .Contact .status .status-online {
