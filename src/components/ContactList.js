@@ -1,5 +1,3 @@
-import React from "react";
-
 const users = [
     {
         name: 'Maddie Kisard',

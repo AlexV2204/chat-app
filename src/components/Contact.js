@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Contact.css';
 
-function Contact(person) {
+function Contact(props) {
     return (
         <div className="Contact">
-            <img className="avatar" src={person.avatar}></img>
+            <img className="avatar" alt={props.name} src={props.avatar}></img>
             <div>
-                <h4 className="name">{person.name}</h4>
+                <h4 className="name">{props.name}</h4>
                 <p class="status">
-                    <span className={person.online ? "status-online" : "status-offline"}></span>
-                    <span className="status-text">{person.online ? "Online" : "Offline"}</span>
+                    <span className={props.online ? "status-online" : "status-offline"}></span>
+                    <span className="status-text">{props.online ? "Online" : "Offline"}</span>
                 </p>
             </div>
         </div>
